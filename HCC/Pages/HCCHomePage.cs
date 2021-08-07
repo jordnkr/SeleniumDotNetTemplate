@@ -13,20 +13,11 @@ namespace SeleniumDotNetTemplate.HCC.Pages
 
         #endregion
 
-        /// <summary>
-        /// Constructor for HCCHomePage
-        /// </summary>
-        /// <param name="driver">IWebDriver object</param>
         public HCCHomePage(IWebDriver driver) : base(driver)
         {
             Driver.WaitForElement(CashToCloseButton);
         }
 
-        /// <summary>
-        /// Constructor for HCCHomePage if it's the first page in the test
-        /// </summary>
-        /// <param name="driver"></param>
-        /// <param name="testEnvironment"></param>
         public HCCHomePage(IWebDriver driver, TestEnvironment testEnvironment) : base(driver)
         {
             switch (testEnvironment)

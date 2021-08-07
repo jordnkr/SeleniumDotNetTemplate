@@ -1,6 +1,6 @@
-﻿When making new project, choose 'C# class library (.NET Framework)'
+﻿When making new project, choose 'Unit Test Project (.NET Framework)'
 
-to install nuget dependencies, need to point at correct package source: https://api.nuget.org/v3/index.json
+To install nuget dependencies, need to point at correct package source: https://api.nuget.org/v3/index.json
 
 Dependencies:
 	* Selenium.WebDriver
@@ -11,3 +11,4 @@ Dependencies:
 
 add chromedriver.exe to project (https://chromedriver.chromium.org/downloads)
 
+Browser and Environment are set in the App.config

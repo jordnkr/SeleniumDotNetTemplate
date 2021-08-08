@@ -5,13 +5,13 @@ using SeleniumDotNetTemplate.Shared;
 namespace SeleniumDotNetTemplate.HCC.Tests
 {
     [TestClass]
-    public class NavigationTests : BaseTest
+    public class HomePageButtonTests : BaseTest
     {
         /// <summary>
         /// Verifies that the 'Cash to Close' button navigates to the correct page
         /// </summary>
         [TestMethod]
-        public void HomePageCashToCloseButton()
+        public void CashToCloseButton()
         {
             HCCHomePage hccHomePage = new HCCHomePage(Driver, TestEnvironment);
             CashToClosePage cashToClosePage = hccHomePage.ClickCashToCloseButton();

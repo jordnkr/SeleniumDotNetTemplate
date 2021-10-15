@@ -67,7 +67,7 @@ namespace SeleniumDotNetTemplate.Shared
         /// <param name="driver">IWebDriverObject</param>
         /// <param name="expectedWindowHandles">amount of window handles to wait for</param>
         /// <param name="timeoutSeconds">amount of time to wait for the window handles to be open</param>
-        public static void WaitForWindowHandle(this IWebDriver driver, int expectedWindowHandles = 2, int timeoutSeconds = 10)
+        public static void WaitForWindowHandles(this IWebDriver driver, int expectedWindowHandles = 2, int timeoutSeconds = 10)
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds)).Until(d => d.WindowHandles.Count == expectedWindowHandles);
         }

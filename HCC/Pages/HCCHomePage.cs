@@ -28,6 +28,7 @@ namespace SeleniumDotNetTemplate.HCC.Pages
                 default:
                     throw new Exception("invalid environment in App.config");
             }
+            Driver.WaitForElement(CashToCloseButton);
         }
 
         public CashToClosePage ClickCashToCloseButton()

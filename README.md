@@ -27,4 +27,8 @@ Tests are set up to use the [Page Object Model](https://www.selenium.dev/documen
 The structure is such that `BasePage.cs` and `BaseTest.cs` are in the `Shared` directory, while the demo page objects and tests are in the `HCC` directory. By having those base classes in the `Shared` directory, we could leverage them for several different websites within this same Selenium project by having a directory for another site alongside the `HCC` directory.
 
 ## Lighthouse (accessibility testing)
-This project is set up with Lighthouse configured. It can be run via an inherited method found in `BasePage.cs`, or with a static class/method found in the `Shared` directory: `Lighthouse.cs`.
+This project is set up with Lighthouse configured. It can be run via an inherited method found in `BasePage.cs`.
+
+In order to run Lighthouse, you must have the Lighthouse node module installed.
+- `npm install -g lighthouse`
+- See config options [here](https://github.com/GoogleChrome/lighthouse#cli-options)

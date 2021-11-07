@@ -17,5 +17,16 @@ namespace SeleniumDotNetTemplate.HCC.Tests
             CashToClosePage cashToClosePage = hccHomePage.ClickCashToCloseButton();
             Assert.IsTrue(cashToClosePage.IsTotalCashToCloseTextDisplayed());
         }
+
+        [TestMethod]
+        public void CashToClosePageLighthouse()
+        {
+            HCCHomePage hccHomePage = new HCCHomePage(Driver, TestEnvironment);
+            CashToClosePage cashToClosePage = hccHomePage.ClickCashToCloseButton();
+            LighthouseAudit audit = cashToClosePage.RunLighthouse(Driver.Url);
+            Assert.IsTrue(audit.Accessibility >= 0.9, "Expected: 1, Got: " + audit.Accessibility);
+            Assert.IsTrue(audit.BestPractices >= 0.9, "Expected: 1, Got: " + audit.Accessibility);
+            Assert.IsTrue(audit.Performance >= 0.9, "Expected: 1, Got: " + audit.Accessibility);
+        }
     }
 }

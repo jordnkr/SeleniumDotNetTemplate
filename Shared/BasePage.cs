@@ -2,6 +2,9 @@
 using System.Diagnostics;
 using Newtonsoft.Json;
 using System;
+using System.Net.Sockets;
+using System.Net;
+using System.Threading;
 
 namespace SeleniumDotNetTemplate.Shared
 {
@@ -15,22 +18,10 @@ namespace SeleniumDotNetTemplate.Shared
             Driver = driver;
         }
 
-        public LighthouseAudit RunLighthouse()
+        public LighthouseAudit RunLighthouse(string url, int port = 4444) // Selenium defaults to 4444. Send in custom number if needed
         {
-            ProcessStartInfo info = new ProcessStartInfo("cmd.exe", "");
-
-            // Configure: no displayed terminal. allow output to be captured.
-            info.CreateNoWindow = true;
-            info.UseShellExecute = false;
-            info.RedirectStandardOutput = true;
-
-            Process process = Process.Start(info);
-            string output = "";
-            process.OutputDataReceived += (object sender, DataReceivedEventArgs e) => output += e.Data;
-            process.BeginOutputReadLine();
-            process.WaitForExit();
-            process.Close();
-
+            // if need to pass auth token (after --output): --extra-headers {"Cookie":""}
+            string output = CommandLineUtil.RunCommand("/c lighthouse " + url + " --output=json --form-factor=desktop --preset=desktop --port=" + port);
             string fixedOutput = output.Replace("best-practices", "bestpractices"); // hyphen not easy to deserialize. Replace.
             dynamic jsonObj = JsonConvert.DeserializeObject(fixedOutput);
 

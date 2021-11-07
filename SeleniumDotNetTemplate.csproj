@@ -92,6 +92,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\BasePage.cs" />
     <Compile Include="Shared\BaseTest.cs" />
+    <Compile Include="Shared\CommandLineUtil.cs" />
     <Compile Include="Shared\DriverExtensions.cs" />
     <Compile Include="Shared\Enums\Browser.cs" />
     <Compile Include="Shared\Enums\TestEnvironment.cs" />

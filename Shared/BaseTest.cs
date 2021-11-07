@@ -6,6 +6,9 @@ using System;
 using System.Configuration;
 using System.Drawing;
 using System.IO;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SeleniumDotNetTemplate.Shared
@@ -46,6 +49,11 @@ namespace SeleniumDotNetTemplate.Shared
                     var chromeOptions = new ChromeOptions();
                     var service = ChromeDriverService.CreateDefaultService(DriverPath);
                     chromeOptions.AddArgument("--start-maximized");
+
+                    // these 2 lines are needed for Lighthouse to use the existing browser window (otherwise opens it's own). Can comment these out if Lighthouse isn't going to be used.
+                    chromeOptions.AddArgument("--remote-debugging-address=0.0.0.0");
+                    chromeOptions.AddArgument($"--remote-debugging-port=4444");
+
                     Driver = new ChromeDriver(service, chromeOptions);
                     break;
                 default:

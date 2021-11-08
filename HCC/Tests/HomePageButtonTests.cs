@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SeleniumDotNetTemplate.HCC.Pages;
 using SeleniumDotNetTemplate.Shared;
 
@@ -15,7 +16,8 @@ namespace SeleniumDotNetTemplate.HCC.Tests
         {
             HCCHomePage hccHomePage = new HCCHomePage(Driver, TestEnvironment);
             CashToClosePage cashToClosePage = hccHomePage.ClickCashToCloseButton();
-            Assert.IsTrue(cashToClosePage.IsTotalCashToCloseTextDisplayed());
+            cashToClosePage.IsTotalCashToCloseTextDisplayed().Should().BeTrue();
+            //Assert.IsTrue(cashToClosePage.IsTotalCashToCloseTextDisplayed());
         }
     }
 }

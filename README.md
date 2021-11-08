@@ -8,6 +8,7 @@ When making new project, choose 'Unit Test Project (.NET Framework)'
 - Selenium.Support
 - Selenium.Axe
 - DotNetSeleniumExtras.WaitHelpers
+- FluentAssertions
 - HtmlAgilityPack
 - MSTest.TestFramework
 - MSTest.TestAdapter
@@ -37,3 +38,6 @@ In order to run Lighthouse, you must have the Lighthouse node module installed.
 
 ## axe-core
 This project can run the accessibility tests found in the axe-core library. This is done with the help of [Selenium.Axe](https://github.com/TroyWalshProf/SeleniumAxeDotnet).
+
+## FluentAssertions
+This is configured to be able to use FluentAssertions for test assertions. Regular MSTest assertions are provided as well, as commented out lines of code.

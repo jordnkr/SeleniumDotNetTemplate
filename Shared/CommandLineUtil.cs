@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace SeleniumDotNetTemplate.Shared
 {
@@ -17,7 +16,7 @@ namespace SeleniumDotNetTemplate.Shared
 
             Process process = Process.Start(info);
             string output = "";
-            process.OutputDataReceived += (object sender, DataReceivedEventArgs e) => output += e.Data;
+            process.OutputDataReceived += new DataReceivedEventHandler((sender, e) => output += e.Data);
             process.BeginOutputReadLine();
             process.WaitForExit();
             process.Close();

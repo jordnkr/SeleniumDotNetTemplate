@@ -6,7 +6,9 @@ When making new project, choose 'Unit Test Project (.NET Framework)'
 ## Dependencies:
 - Selenium.WebDriver
 - Selenium.Support
+- Selenium.Axe
 - DotNetSeleniumExtras.WaitHelpers
+- HtmlAgilityPack
 - MSTest.TestFramework
 - MSTest.TestAdapter
 - Microsoft.CSharp
@@ -32,3 +34,6 @@ This project is set up with Lighthouse configured. It can be run via an inherite
 In order to run Lighthouse, you must have the Lighthouse node module installed.
 - `npm install -g lighthouse`
 - See config options [here](https://github.com/GoogleChrome/lighthouse#cli-options)
+
+## axe-core
+This project can run the accessibility tests found in the axe-core library. This is done with the help of [Selenium.Axe](https://github.com/TroyWalshProf/SeleniumAxeDotnet).
